@@ -57,8 +57,11 @@ footer::after{
 }
 
 .footer audio {
-    width: 80%;
+    width: 70%;
     float: right;
+    margin-left: 0;
+    margin-right: 50px;
+    margin-top: 20px;
 }
 
 footer{
@@ -80,7 +83,7 @@ footer{
 
 .coverPhoto #songTitle{
     font-weight: bold;
-    /* margin-top: 10px; */
+    margin-top: 10px;
     /* padding-top: 5px; */
     margin: 5px;
     text-align: center;
@@ -99,10 +102,12 @@ footer{
     float: left;
 }
 
-li #textFooter{
-    padding-top: 10px;
-    margin-top: 10px;
-    margin: 10px;
+ #textFooter{
+    /* padding-top: 10px;
+    margin-top: 30px; */
+    margin: 50px 0px 10px 320px;
+    text-align: left;
+    float: left;
 }
 
 footer ul{
@@ -113,7 +118,7 @@ footer ul{
 
 footer li{
     /*If this is on, it just shows the play button and nothing else*/
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .content {

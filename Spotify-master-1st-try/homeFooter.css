@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer ul {
+    float: right;   
+    margin: 0;
+    padding: 0; 
+    list-style: none;
+}
+
+.nav li{
+    display: inline-block;
+}
+
+img #songCover{
+    float: left;
+    margin: 0;
+    padding: 0;
+}
