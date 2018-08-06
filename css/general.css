@@ -61,10 +61,7 @@ header.header{
     padding-top: 0.2rem;
 }
 
-
-/* content de coverpage */
 .content {
-    /* background: green; */
     display: inline-block;
     width: 60%;
 }
@@ -76,8 +73,6 @@ header.header{
     text-transform: uppercase;
     font-weight: bold;
 }
-/* content de coverpage */
-
 
 #container{
     box-sizing: 100%;
@@ -85,36 +80,32 @@ header.header{
     width: 100%;
 }
 
-#leftDivision{
-    background-color: #58f7f7;
-    /* border-color: white;
-    border-width: 2rem; */
-    width: 33.3%;
-    float: left;
+.grid-container {
+    display: grid;
+    grid-gap: 0.625rem;
+    grid-template-columns: auto auto auto auto;
+    padding: 0.625rem 1.875rem;
+}
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0.625rem;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
-#middleDivision{
-    background-color: #e1f184;
-    border-color: #606060;
-    width: 33.3%;
-    float: left;
+.grid-item > p{
+    opacity: 0.8;
 }
 
-#rightDivision{
-    background-color: #9e3312;
-    border-color: #606060;
-    width: 33.3%;
-    float: left;
+.grid-item > img{
+    object-fit: cover;
+    width: 5rem;
 }
 
 .navigation {
-    /* background: #606060; */
     background-color: #3b3b3b;
-
-    /* display: inline-block; */
     width: 20%;
     float: left;
-    /* border-radius: 0 0.375rem 0.376rem 0; */
 }
 
 .navigation p{
@@ -146,7 +137,6 @@ header.header{
 }
 .library li label {
     font-weight: bold;
-    /* border-bottom: 1px solid rgb(80, 80, 80); */
     display: block;
     padding-top: 1.5rem;
     padding-bottom: 1rem;
@@ -154,11 +144,8 @@ header.header{
 
 .sidebar {
     background-color: #3b3b3b;
-    /* background: #606060; */
-    /* display: inline-block; */
     float: right;
     width: 20%;
-    /* border-radius: 0.375rem 0 0 0.376rem; */
     margin-top: 0;
     margin-right: 0;
     height: 62.5rem;
@@ -239,18 +226,6 @@ footer::after{
     margin-top: 0.9375rem;
 }
 
-/* footer{
-    float: right;
-} */
-
-/* .footer label{
-    float: left;
-    /* margin-right: 50px;
-    margin-top: -10px;
-    margin-bottom: 40px;
-    margin: 0px 50px 10px 0px;
-} */
-
 .coverPhoto{
     float: left;
     list-style: none;
@@ -259,7 +234,6 @@ footer::after{
 .coverPhoto #songTitle{
     font-weight: bold;
     margin-top: 0.625rem;
-    /* padding-top: 5px; */
     margin: 0.3125rem;
     text-align: center;
     float: center;
@@ -274,17 +248,12 @@ footer::after{
 }
 
 #songCover{
-    /* width: 100px; */
     height: 9.375rem;
     float: left;
 }
 
 #textFooter{
-    /* padding-top: 10px;
-    margin-top: 30px; */
     margin: 1.875rem 0rem 0.625rem 23rem;
-    /* text-align: left;
-    float: left; */
     overflow: auto;
     float: center;
     text-align: center;
@@ -296,27 +265,13 @@ footer ul{
     list-style: none;
 }
 
-footer li{
-    /*If this is on, it just shows the play button and nothing else*/
-    /* display: inline-block; */
-}
-
 @media screen and (max-width:850px){
     #container{
         width: 100%;
     }
-    header.header{
+    header .header{
         box-sizing: content-box;
     }
-    /* #leftDivision{
-        width: 20%;
-    }
-    #middleDivision{
-        width: 20%;
-    }
-    #rightDivision{
-        width: 20%;
-    } */
     footer .footer{
         width: 30%;
     }
@@ -335,13 +290,6 @@ footer li{
     img{
         height: 100%
     }
-
-    /* #songTitle{
-        margin: 0px 0px 0px 0px;
-        padding: 0px 0px 0px 0px;
-        float: left;
-        text-align: left;
-    } */
 
     .grid-item > img{
         width: 2.5rem;
