@@ -1,4 +1,4 @@
-* {
+albumsContent* {
     font-family: 'Roboto', sans-serif;
 }
 body {
@@ -120,26 +120,27 @@ a {
     list-style: none;
 }
 
-#artistsContent {
+#albumsContent {
     display: flex;
+    white-space: nowrap;
     justify-content: space-between;
     margin-top: 50px;
 }
-#artistsContent > div {
+#albumsContent > div {
     width: 20%;
     height: 90px;
     display: flex;
     align-items: center;
 }
-#artistsContent div img {
+#albumsContent div img {
     width: 90px;
     height: 90px;
 }
-#artistsContent div div {
+#albumsContent div div {
     display: inline-block;
     padding-left: 20px;
 }
-#artistsContent div div > *{
+#albumsContent div div > *{
     margin: 0;
 }
 
