@@ -1,0 +1,37 @@
+{
+"artists": [
+    { "id": 1, "name": "Metallica" },
+    { "id": 2, "name": "Red Hot Chilli Peppers" },
+	{ "id": 3, "name": "Gorillaz" }
+],
+"albums": [
+    { "id": 1, "name": "Reload", "artists": [1], "songs": [1, 2, 3]},
+    { "id": 2, "name": "Hardwired", "artists": [1], "songs": [4, 5]},
+    { "id": 3, "name": "The Gateway", "artists": [2], "songs": [6, 7, 8]},
+    { "id": 4, "name": "I'm With You", "artists": [2], "songs": [9, 10]}
+],
+"songs": [
+	{ "id": 1, "artists": [1], "genreId": 1, "name": "Fuel"},
+	{ "id": 2, "artists": [1], "genreId": 1, "name": "The Memory Remains"},
+	{ "id": 3, "artists": [1], "genreId": 1, "name": "Devil's Dance"},
+	{ "id": 4, "artists": [1], "genreId": 1, "name": "Hardwired"},
+	{ "id": 5, "artists": [1], "genreId": 1, "name": "Atlas, Rise!"},
+	{ "id": 6, "artists": [2], "genreId": 2, "name": "The Gateway"},
+	{ "id": 7, "artists": [2], "genreId": 2, "name": "Dark Necessities"},
+	{ "id": 8, "artists": [2], "genreId": 2, "name": "We Turn Red"},
+	{ "id": 9, "artists": [2], "genreId": 2, "name": "Monarchy Of Roses"},
+	{ "id": 10, "artists": [2], "genreId": 2, "name": "Factory Of Faith"}
+],
+"genres": [
+    { "id": 1, "name": "Metallica Genre"},
+    { "id":2, "name": "Rock, Chillout"}
+],
+"playLists": [
+	{ "id": 1, "name": "Chill", "description": "Metallica and red hots",
+		"image": "https://cloudfront.dappered.com/wp-content/uploads/2016/08/Playlist_Header_large_posterized.jpg",
+		"songs": [1,2]
+	}
+],
+"users": [],
+"friends": []
+}
