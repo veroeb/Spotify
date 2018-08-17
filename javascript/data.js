@@ -6,6 +6,10 @@ let artists = [
 	{
 		id: 2,
 		name: 'Red Hot Chilli Peppers'
+	},
+	{
+		id: 3,
+		name: 'Gorillaz'
 	}
 ]
 let albums = [
@@ -13,37 +17,98 @@ let albums = [
 		id: 1,
 		name: 'Reload',
 		artists: [1],
-		songs: [1]
+		songs: [1, 2, 3]
     },
-    {
+	{
 		id: 2,
-		name: 'Dark necessities',
+		name: 'Hardwired',
+		artists: [1],
+		songs: [4, 5]
+    },
+	{
+		id: 3,
+		name: 'The Gateway',
+		artists: [6, 7 , 8],
+		songs: []
+    },
+	{
+		id: 4,
+		name: "I'm With You",
 		artists: [2],
-		songs: [2]
-	}
+		songs: [9, 10]
+    },
 ];
 let songs = [
-    {
+	{
 		id:1,
 		name: 'Fuel',
 		artists: [1],
 		genreId: 1
 	},
-    {
+	{
 		id:2,
-		name: 'Dark necessities',
+		name: 'The Memory Remains',
+		artists: [1],
+		genreId: 1
+	},
+	{
+		id:3,
+		name: "Devil's Dance",
+		artists: [1],
+		genreId: 1
+	},
+	{
+		id:4,
+		name: "Hardwired",
+		artists: [1],
+		genreId: 1
+	},
+	{
+		id:5,
+		name: "Atlas, Rise!",
+		artists: [1],
+		genreId: 1
+	},
+	{
+		id:6,
+		name: 'The Gateway',
 		artists: [2],
 		genreId: 2
-	}
+	},
+	{
+		id:7,
+		name: 'Dark Necessities',
+		artists: [2],
+		genreId: 2
+	},
+	{
+		id:8,
+		name: 'We Turn Red',
+		artists: [2],
+		genreId: 2
+	},
+	{
+		id:9,
+		name: 'Monarchy Of Roses',
+		artists: [2],
+		genreId: 2
+	},
+	{
+		id:10,
+		name: 'Factory Of Faith',
+		artists: [2],
+		genreId: 2
+	},
+
 ]
 let genres = [
     {
 		id:1,
-		name:'Metallica'
+		name:'Metallica Genre'
 	},
     {
 		id:2,
-		name:'RHCP'
+		name:'Rock, Chillout'
 	}
 ];
 let playLists = [
@@ -55,3 +120,6 @@ let playLists = [
 		songs: [1,2]
 	}
 ];
+
+let users = []
+let friends = []

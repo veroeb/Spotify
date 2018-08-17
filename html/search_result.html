@@ -4,18 +4,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/search_general.css">
-        <link rel="stylesheet" href="../css/search_results.css">
+        <link rel="stylesheet" href="../css/normalize.css"><!-- Normalize tags -->
+        <link rel="stylesheet" href="../css/general.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>Musify - Search results</title>
     </head>
-
     <body>
-        <div id="container">
-            <div id="box_container">
-                <div class="cover">
+        <div id="site_container"><!-- Whole site, grid manipulation -->
+            <div id="main_container"><!-- Grid manipulation. Navigation, header, section, aside-->
+                <div class="cover"><!-- Flex manipulation. Navigation & songCover -->
                     <nav id="navigation">
                         <h3>Browse</h3>
                         <ul class="library">
@@ -37,7 +35,7 @@
                             <li><a href="#">Local hits</a></li>
                         </ul>
                     </nav>
-                    <div class="songCover">
+                    <div class="songCover"><!-- Display song cover image -->
                         <div>
                             <i class="material-icons">add_circle_outline</i>
                             <p>New Playlist</p>
@@ -48,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="cotainerCenter">
+                <div class="cotainerCenter"><!-- Center box -->
                     <header id="header">
                         <div>
                             <i class="material-icons">keyboard_arrow_left</i>
@@ -58,8 +56,9 @@
                         <button onclick="makeSearch();">Search</button>
                     </header>
 
-                    <section id="section">
-                        <div id="songsContent">
+                    <section id="section"><!-- Main section -->
+                        <!-- Flex flex, flexible-->
+                        <div id="songsContent"><!--Song box -->
                             <ul>
                                 <li>TITLE</li>
                                 <li>Highway to Hell</li>
@@ -82,7 +81,7 @@
                                 <li>Back in Black</li>
                             </ul>
                         </div>
-                        <div id="albumsContent">
+                        <div id="albumsContent"><!-- Album box -->
                             <div>
                                 <img src="../media/razorsedge"/>
                                 <div>
