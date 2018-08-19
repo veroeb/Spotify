@@ -41,23 +41,23 @@ a {
     color: rgb(189, 243, 243);
 }
 
-.library h4 {
+#library h4 {
     font-weight: 300;
     color: #80b4b4;
     text-transform: uppercase;
 }
-.library{
+#library{
     margin-bottom: 1rem;
     list-style: none;
     padding-left: 20px;
 }
-.library li {
+#library li {
     padding-bottom: 15px;
 }
-.library li a {
+#library li a {
     display: block;
 }
-.library li label {
+#library li label {
     font-weight: bold;
     display: block;
     padding-top: 1.5rem;
