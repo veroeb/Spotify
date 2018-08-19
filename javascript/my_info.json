@@ -11,25 +11,45 @@
     { "id": 4, "name": "I'm With You", "artists": [2], "songs": [9, 10]}
 ],
 "songs": [
-	{ "id": 1, "artists": [1], "genreId": 1, "name": "Fuel"},
-	{ "id": 2, "artists": [1], "genreId": 1, "name": "The Memory Remains"},
-	{ "id": 3, "artists": [1], "genreId": 1, "name": "Devil's Dance"},
-	{ "id": 4, "artists": [1], "genreId": 1, "name": "Hardwired"},
-	{ "id": 5, "artists": [1], "genreId": 1, "name": "Atlas, Rise!"},
-	{ "id": 6, "artists": [2], "genreId": 2, "name": "The Gateway"},
-	{ "id": 7, "artists": [2], "genreId": 2, "name": "Dark Necessities"},
-	{ "id": 8, "artists": [2], "genreId": 2, "name": "We Turn Red"},
-	{ "id": 9, "artists": [2], "genreId": 2, "name": "Monarchy Of Roses"},
-	{ "id": 10, "artists": [2], "genreId": 2, "name": "Factory Of Faith"}
+	{ "id": 1, "artists": [1], "genreId": 1, "name": "Fuel", "src": "../media/songs/fuel.mp3"},
+	{ "id": 2, "artists": [1], "genreId": 1, "name": "The Memory Remains", "src": "../media/songs/the_memory_remains.mp3"},
+	{ "id": 3, "artists": [1], "genreId": 1, "name": "Devil's Dance", "src": "../media/songs/devils_dance.mp3"},
+	{ "id": 4, "artists": [1], "genreId": 1, "name": "Hardwired", "src": "../media/songs/hardwired.mp3"},
+	{ "id": 5, "artists": [1], "genreId": 1, "name": "Atlas, Rise!", "src": ""},
+	{ "id": 6, "artists": [2], "genreId": 2, "name": "The Gateway", "src": "../media/songs/the_gateway.mp3"},
+	{ "id": 7, "artists": [2], "genreId": 2, "name": "Dark Necessities", "src": "../media/songs/dark_necessities.mp3"},
+	{ "id": 8, "artists": [2], "genreId": 2, "name": "We Turn Red", "src": ""},
+	{ "id": 9, "artists": [2], "genreId": 2, "name": "Monarchy Of Roses", "src": "../media/songs/monarchy_of_roses.mp3"},
+	{ "id": 10, "artists": [2], "genreId": 2, "name": "Factory Of Faith", "src": ""}
 ],
 "genres": [
     { "id": 1, "name": "Metallica Genre"},
     { "id":2, "name": "Rock, Chillout"}
 ],
-"playLists": [
-	{ "id": 1, "name": "Chill", "description": "Metallica and red hots",
+"playlists": [
+    { "id": 1, "name": "Shazam", "description": "Music from Shazam",
 		"image": "https://cloudfront.dappered.com/wp-content/uploads/2016/08/Playlist_Header_large_posterized.jpg",
 		"songs": [1,2]
+	},
+    { "id": 1, "name": "Summer", "description": "Summer hits",
+		"image": "",
+		"songs": []
+	},
+    { "id": 1, "name": "Training", "description": "Workout!",
+		"image": "",
+		"songs": []
+	},
+    { "id": 1, "name": "Work", "description": "Idle music",
+		"image": "",
+		"songs": []
+	},
+    { "id": 1, "name": "Family friendly", "description": "Chillin'",
+		"image": "",
+		"songs": []
+	},
+    { "id": 1, "name": "Local hits", "description": "",
+		"image": "",
+		"songs": []
 	}
 ],
 "users": [],
