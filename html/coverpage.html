@@ -14,6 +14,39 @@
     </head>
     <body>
         <div id="site_container"><!-- Whole site, grid manipulation -->
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h3>Create playlist</h3>
+                        <hr>
+                    </div>
+                    <div class="modal-body">
+                        <p>Name</p>
+                        <input type="text" placeholder="New playlist" id="newPlaylist">
+                        <br />
+                        <div class="row">
+                            <div class="imageModal">
+                                <p>Image</p>
+                                <img src="../media/camila.jpg" alt="Camila" id="imageModalContent">
+                            </div>
+                            <div class="description">
+                                <p>Description</p>
+                                <textarea name="" id="descriptionContente" cols="30" rows="10"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btnFooter" id="btnCancel">CANCEL</button>
+                        <button class="btnFooter" id="btnCreate">CREATE</button>
+                    </div>
+                </div>
+
+            </div>
             <div id="main_container"><!-- Grid manipulation. Navigation, header, section, aside-->
                 <div class="cover"><!-- Flex manipulation. Navigation & songCover -->
                     <nav id="navigation">
@@ -38,39 +71,7 @@
                             <i class="material-icons">add_circle_outline</i>
                             <p>New Playlist</p>
                         </button>
-                        <!-- The Modal -->
-                        <div id="myModal" class="modal">
-
-                            <!-- Modal content -->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <span class="close">&times;</span>
-                                    <h3>Create playlist</h3>
-                                    <hr>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Name</p>
-                                    <input type="text" placeholder="New playlist" id="newPlaylist">
-                                    <br />
-                                    <div class="row">
-                                        <div class="imageModal">
-                                            <p>Image</p>
-                                            <img src="../media/camila.jpg" alt="Camila" id="imageModalContent">
-                                        </div>
-                                        <div class="description">
-                                            <p>Description</p>
-                                            <textarea name="" id="descriptionContente" cols="30" rows="10"></textarea>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btnFooter" id="btnCancel">CANCEL</button>
-                                    <button class="btnFooter" id="btnCreate">CREATE</button>
-                                </div>
-                            </div>
-
-                        </div>
+                        
                     <div>
                         <img src="../media/fallout.jpg">
                     </div>
