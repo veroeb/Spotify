@@ -1,53 +1,53 @@
 {
 "artists": [
-    { "id": 1, "name": "Metallica" },
-    { "id": 2, "name": "Red Hot Chilli Peppers" },
-	{ "id": 3, "name": "Gorillaz" }
+    { "id": 1, "name": "metallica" },
+    { "id": 2, "name": "red Hot Chilli Peppers" },
+	{ "id": 3, "name": "gorillaz" }
 ],
 "albums": [
-    { "id": 1, "name": "Reload", "artists": [1], "songs": [1, 2, 3]},
-    { "id": 2, "name": "Hardwired", "artists": [1], "songs": [4, 5]},
-    { "id": 3, "name": "The Gateway", "artists": [2], "songs": [6, 7, 8]},
-    { "id": 4, "name": "I'm With You", "artists": [2], "songs": [9, 10]}
+    { "id": 1, "name": "reload", "artists": [1], "songs": [1, 2, 3]},
+    { "id": 2, "name": "hardwired", "artists": [1], "songs": [4, 5]},
+    { "id": 3, "name": "the Gateway", "artists": [2], "songs": [6, 7, 8]},
+    { "id": 4, "name": "i'm With You", "artists": [2], "songs": [9, 10]}
 ],
 "songs": [
-	{ "id": 1, "artists": [1], "genreId": 1, "name": "Fuel", "src": "../media/songs/fuel.mp3"},
-	{ "id": 2, "artists": [1], "genreId": 1, "name": "The Memory Remains", "src": "../media/songs/the_memory_remains.mp3"},
-	{ "id": 3, "artists": [1], "genreId": 1, "name": "Devil's Dance", "src": "../media/songs/devils_dance.mp3"},
-	{ "id": 4, "artists": [1], "genreId": 1, "name": "Hardwired", "src": "../media/songs/hardwired.mp3"},
-	{ "id": 5, "artists": [1], "genreId": 1, "name": "Atlas, Rise!", "src": ""},
-	{ "id": 6, "artists": [2], "genreId": 2, "name": "The Gateway", "src": "../media/songs/the_gateway.mp3"},
-	{ "id": 7, "artists": [2], "genreId": 2, "name": "Dark Necessities", "src": "../media/songs/dark_necessities.mp3"},
-	{ "id": 8, "artists": [2], "genreId": 2, "name": "We Turn Red", "src": ""},
-	{ "id": 9, "artists": [2], "genreId": 2, "name": "Monarchy Of Roses", "src": "../media/songs/monarchy_of_roses.mp3"},
-	{ "id": 10, "artists": [2], "genreId": 2, "name": "Factory Of Faith", "src": ""}
+	{ "id": 1, "artists": [1], "genreId": 1, "name": "fuel", "src": "../media/songs/fuel.mp3"},
+	{ "id": 2, "artists": [1], "genreId": 1, "name": "the Memory Remains", "src": "../media/songs/the_memory_remains.mp3"},
+	{ "id": 3, "artists": [1], "genreId": 1, "name": "devil's Dance", "src": "../media/songs/devils_dance.mp3"},
+	{ "id": 4, "artists": [1], "genreId": 1, "name": "hardwired", "src": "../media/songs/hardwired.mp3"},
+	{ "id": 5, "artists": [1], "genreId": 1, "name": "atlas, Rise!", "src": ""},
+	{ "id": 6, "artists": [2], "genreId": 2, "name": "the Gateway", "src": "../media/songs/the_gateway.mp3"},
+	{ "id": 7, "artists": [2], "genreId": 2, "name": "dark Necessities", "src": "../media/songs/dark_necessities.mp3"},
+	{ "id": 8, "artists": [2], "genreId": 2, "name": "we Turn Red", "src": ""},
+	{ "id": 9, "artists": [2], "genreId": 2, "name": "monarchy Of Roses", "src": "../media/songs/monarchy_of_roses.mp3"},
+	{ "id": 10, "artists": [2], "genreId": 2, "name": "factory Of Faith", "src": ""}
 ],
 "genres": [
-    { "id": 1, "name": "Metallica Genre"},
-    { "id":2, "name": "Rock, Chillout"}
+    { "id": 1, "name": "metallica Genre"},
+    { "id":2, "name": "rock, Chillout"}
 ],
 "playlists": [
-    { "id": 1, "name": "Shazam", "description": "Music from Shazam",
+    { "id": 1, "name": "shazam", "description": "Music from Shazam",
 		"image": "https://cloudfront.dappered.com/wp-content/uploads/2016/08/Playlist_Header_large_posterized.jpg",
 		"songs": [1,2]
 	},
-    { "id": 1, "name": "Summer", "description": "Summer hits",
+    { "id": 1, "name": "summer", "description": "Summer hits",
 		"image": "",
 		"songs": []
 	},
-    { "id": 1, "name": "Training", "description": "Workout!",
+    { "id": 1, "name": "training", "description": "Workout!",
 		"image": "",
 		"songs": []
 	},
-    { "id": 1, "name": "Work", "description": "Idle music",
+    { "id": 1, "name": "work", "description": "Idle music",
 		"image": "",
 		"songs": []
 	},
-    { "id": 1, "name": "Family friendly", "description": "Chillin'",
+    { "id": 1, "name": "family friendly", "description": "Chillin'",
 		"image": "",
 		"songs": []
 	},
-    { "id": 1, "name": "Local hits", "description": "",
+    { "id": 1, "name": "local hits", "description": "",
 		"image": "",
 		"songs": []
 	}

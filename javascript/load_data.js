@@ -1,19 +1,6 @@
-const playlistElement = document.getElementById('nav_playlist');
-const url = 'http://localhost:3000/';
-const urlSongs = `${url}songs`;// url+'songs'
-const urlAlbums = `${url}albums`;
-const urlPlaylists = `${url}playlists`;
-
-function createNode(element) {
-    return document.createElement(element);
-}
-function append(parent, element) {
-    return parent.appendChild(element);
-}
-
 // Get playlists from API and displays them in view
 function getPlaylists() {
-    fetch(urlPlaylists)
+    fetch(urlHandler.urlPlaylists)
     .then((response) => response.json())
     .then(function(data) {
         let playlistsFound = data;
@@ -28,37 +15,53 @@ function getPlaylists() {
 function displayPlaylist(playlist) {
     let li = createNode('li'),
         anchor = createNode('a');
-    anchor.href = '#'
-    anchor.title = `${playlist.description}`
-    anchor.innerHTML = `${playlist.name}`;// equals to: "'"+playlist.name+"'"
+    anchor.href = '#';
+    anchor.title = `${playlist.description}`;
+    var name = `${playlist.name}`;
+    anchor.innerHTML = nameCapitalized(name);// equals to: "'"+playlist.name+"'"
     append(li, anchor);
     append(playlistElement, li);
 }
 
 function loadSongs() {
-    var urlAlb = `${urlAlbums}?id=1`;
-    fetch(urlAlb)
+    fetch(urlHandler.urlAlbums)
     .then((response) => response.json())
-    .then(function(data) {
+    .then(async function(data) {
         let albumFound = data;
         let albumSongs = albumFound[0].songs;
-        let objs = albumSongs.map(getSong);
-        return objs;
+        // let songsList = albumSongs.map(getSong);
+        var songsList = [];
+        var songObj;
+        for(const item of albumSongs) {
+            songObj = await getSong(item);
+            console.log("geu: "+songObj);
+            songsList.push(songObj);
+        }
+        console.log("YO!");
+        Promise.all(songsList).then(results=>{
+            console.log("HERE : "+ results);
+        });
     })
     .catch(function(error) {
         console.log("Error happened during loadSongs()");
         console.log(error);
     })
 }
-const getSong = async (songId) => {
-    var urlSearchedSong = `${urlSongs}?id=${songId}`;
-    const response = await fetch(urlSearchedSong);
-    const json = await response.json();
-    (json) => {
-        console.log(song[0]);
-        return song[0];
-    }
+async function getSong(songId) {
+    const urlSearchedSong = urlHandler.urlSongs+`?id=${songId}`;
+    //var urlSearchedSong = `${urlSongs}?id=${songId}`;
+    fetch(urlSearchedSong)
+    .then((response) => response.json())
+    .then(function(song) {
+        var d = song;
+        console.log(d);
+        return d;
+    })
+    .catch(function(error) {
+        console.log(`Error happened during getSong(${songId})`);
+        console.log(error);
+    })
 }
+
 getPlaylists();
 // console.log('bye');
-console.log(loadSongs());
