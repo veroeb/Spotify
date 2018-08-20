@@ -7,12 +7,47 @@
         <link rel="stylesheet" href="../css/normalize.css"><!--Normalize tags -->
         <link rel="stylesheet" href="../css/coverpage.css">
         <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/modal.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>Musify - Browse</title>
     </head>
     <body>
         <div id="site_container"><!-- Whole site, grid manipulation -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Create playlist</h3>
+                        <hr>
+                    </div>
+                    <div class="modal-body">
+                        <p>Name</p>
+                        <input type="text" placeholder="New playlist" id="newPlaylist">
+                        <br />
+                        <div class="row">
+                            <div class="imageModal">
+                                <p>Image</p>
+                                <img src="../media/camila.jpg" alt="Camila" id="imageModalContent">
+                            </div>
+                            <div class="description">
+                                <p>Description</p>
+                                <textarea name="" id="descriptionContente" cols="30" rows="10"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btnFooter" id="btnCancel" onclick="document.getElementById('myModal').style.display='none'">CANCEL</button>
+                        <button class="btnFooter" id="btnCreate">CREATE</button>
+                    </div>
+                </div>
+
+            </div>
+
             <div id="main_container"><!-- Grid manipulation. Navigation, header, section, aside-->
                 <div class="cover"><!-- Flex manipulation. Navigation & songCover -->
                     <nav id="navigation">
@@ -31,14 +66,17 @@
                             <span id="nav_playlist"></span>
                         </ul>
                     </nav>
-                    <div class="songCover"><!-- Display song cover image -->
-                        <div>
+                    <div class="songCover">
+                        <!-- Display song cover image -->
+                        <button id="myBtn">
                             <i class="material-icons">add_circle_outline</i>
                             <p>New Playlist</p>
-                        </div>
-                        <div>
-                            <img src="../media/fallout.jpg">
-                        </div>
+                        </button>
+
+                    <div>
+                        <img src="../media/fallout.jpg">
+                    </div>
+                </div>
                     </div>
                 </div>
 
@@ -198,6 +236,7 @@
         </div>
         <script src="../javascript/data_handler.js" type="text/javascript"></script>
         <script src="../javascript/element_handler.js" type="text/javascript"></script>
+        <script src="../javascript/playlist_modal.js" type="text/javascript"></script>
         <script src="../javascript/load_data.js" type="text/javascript"></script>
     </body>
 </html>
