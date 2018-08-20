@@ -115,27 +115,27 @@ a {
     list-style: none;
 }
 
-#albumsContent {
+.searchContent {
     display: flex;
     white-space: nowrap;
     justify-content: space-between;
     margin-top: 50px;
 }
-#albumsContent > div {
+.searchContent > div {
     width: 20%;
     height: 90px;
     display: flex;
     align-items: center;
 }
-#albumsContent div img {
+.searchContent div img {
     width: 90px;
     height: 90px;
 }
-#albumsContent div div {
+.searchContent div div {
     display: inline-block;
     padding-left: 20px;
 }
-#albumsContent div div > *{
+.searchContent div div > *{
     margin: 0;
 }
 /* END search_result style */
