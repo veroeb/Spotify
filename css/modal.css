@@ -151,6 +151,7 @@
 
 textarea{
     width: 180%;
+    resize: none;
 }
 
 .row{
