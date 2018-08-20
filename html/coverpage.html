@@ -14,13 +14,13 @@
     </head>
     <body>
         <div id="site_container"><!-- Whole site, grid manipulation -->
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
+            
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
 
                 <!-- Modal content -->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <span class="close">&times;</span>
                         <h3>Create playlist</h3>
                         <hr>
                     </div>
@@ -41,12 +41,13 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btnFooter" id="btnCancel">CANCEL</button>
+                        <button class="btnFooter" id="btnCancel" onclick="document.getElementById('myModal').style.display='none'">CANCEL</button>
                         <button class="btnFooter" id="btnCreate">CREATE</button>
                     </div>
                 </div>
 
             </div>
+            
             <div id="main_container"><!-- Grid manipulation. Navigation, header, section, aside-->
                 <div class="cover"><!-- Flex manipulation. Navigation & songCover -->
                     <nav id="navigation">
