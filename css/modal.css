@@ -94,6 +94,7 @@
     padding: 2px 16px;
     /* background-color: #5cb85c; */
     color: white;
+    margin-top: 1rem;
 }
 
 .modal-body {
@@ -106,7 +107,7 @@
     /* background-color: #5cb85c; */
     color: white;
     text-align: center;
-    margin-top: 15.625rem;
+    margin-top: 15rem;
 }
 
 .btnFooter {
@@ -122,23 +123,23 @@
     cursor: pointer;
     justify-content: space-evenly;
     border-radius: 2rem;
+    margin-bottom: 1rem;
 }
 
 #btnCancel{
-    background-color: #282828;
+    background-color: #636363;
+    margin-right: 1rem;
     border: white;
-    border-width: 1em;
 }
 
 #btnCreate{
     background-color: #4CAF50;
+    margin-left: 1rem;
 }
 
 #imageModalContent{
     width: 10rem;
 }
-
-
 
 .imageModal, .description{
     float: left;
@@ -153,9 +154,25 @@ textarea{
 }
 
 .row{
-    justify-content: space-between;            
+    justify-content: space-between;     
+    margin-top: 1rem;       
 }
 
 #newPlaylist{
-    width: 85%;
+    width: 92%;
+}
+
+.modal-body input, textarea, .imageModal img{
+    margin-top: 0.5rem;
+}
+
+#addImage{
+    background-color: #636363;
+    color: white;
+    border: none; 
+    cursor: pointer;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    border-radius: 2rem;
+    padding: 0.3rem 0.8rem;
 }
