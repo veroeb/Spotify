@@ -23,8 +23,13 @@
 	{ "id": 10, "artists": [2], "genreId": 2, "name": "factory Of Faith", "src": ""}
 ],
 "genres": [
-    { "id": 1, "name": "metallica Genre"},
-    { "id":2, "name": "rock, Chillout"}
+    { "id": 1, "name": "rock"},
+    { "id":2, "name": "indie"},
+    { "id":3, "name": "latin"},
+    { "id":4, "name": "hip-hop"},
+    { "id":5, "name": "pop"},
+    { "id":6, "name": "folk & Americana"},
+    { "id":7, "name": "jazz"}
 ],
 "playlists": [
     { "id": 1, "name": "shazam", "description": "Music from Shazam",
@@ -53,5 +58,21 @@
 	}
 ],
 "users": [],
-"friends": []
+"friends": [
+    { "name": "Roberto Perez", "song":"God is a Woman", "artist":"Ariana Grande", "image": ""},
+
+    { "name": "Veronica Echezarreta", "song":"Cold Sweat", "artist":"Tinashe", "image": ""},
+
+    { "name": "Federico Gil", "song":"Only One", "artist":"Cheat Codes ft. Little Mix", "image": ""},
+
+    { "name": "Camila Cabello", "song":"Ocean", "artist":"Martin Garrix ft. Khalid", "image": ""},
+
+    { "name": "Romina Garcia", "song":"Medicina", "artist":"Anitta", "image": ""},
+
+    { "name": "Valentina Lopez", "song":"DDU-DU-DDU-DU", "artist":"BLACKPINK", "image": ""},
+
+    { "name": "Emiliano Rodriguez", "song":"Solo", "artist":"Clean Bandit ft. Demi Lovato", "image": ""},
+
+    { "name": "Daniela Arraga", "song":"Nonstop", "artist":"Drake", "image": ""}
+]
 }

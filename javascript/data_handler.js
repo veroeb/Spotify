@@ -1,15 +1,12 @@
-const urlV = 'http://localhost:3000/';
-const urlSongsV = `${urlV}songs`;// url+'songs'
-const urlArtistsV = `${urlV}artists`;
-const urlAlbumsV = `${urlV}albums`;
-const urlPlaylistsV = `${urlV}playlists`;
-
+const URL = 'http://localhost:3000/';
 const urlHandler = {
-    url: urlV,
-    urlSongs: urlSongsV,
-    urlArtists: urlArtistsV,
-    urlAlbums: urlAlbumsV,
-    urlPlaylists: urlPlaylistsV
+    url: URL,
+    urlSongs: `${URL}songs`,
+    urlArtists: `${URL}artists`,
+    urlAlbums: `${URL}albums`,
+    urlPlaylists: `${URL}playlists`,
+    urlGenres: `${URL}genres`,
+    urlFriends: `${URL}friends`
 };
 
 function nameCapitalized(name) {

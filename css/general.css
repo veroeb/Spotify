@@ -103,7 +103,7 @@ a {
     border-style: none;
 }
 
-/* search_result style */
+/* START search_result style */
 #songsContent {
     display: flex;
 }
@@ -114,7 +114,6 @@ a {
 #songsContent ul{
     list-style: none;
 }
-
 .searchContent {
     display: flex;
     white-space: nowrap;
@@ -161,13 +160,13 @@ a {
 #sidebar li{
     margin-top: 1rem;
 }
-#friendName{
+.friendName{
     font-weight: bold;
     font-size: 0.95rem;
     padding-bottom: 0.2rem;
     padding-top: 0.5rem;
 }
-#friendSong, #friendArtist{
+.friendSong, .friendArtist{
     font-weight: lighter;
     color: rgb(180, 180, 180);
     padding-top: 0.1rem;

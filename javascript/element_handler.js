@@ -1,4 +1,3 @@
-const playlistElement = document.getElementById('nav_playlist');
 let sectionElement = document.getElementById('section');
 
 function createNode(element) {

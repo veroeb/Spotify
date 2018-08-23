@@ -39,7 +39,7 @@ function createPlaylist() {
 }
 function getCreatedPlaylist() {
     return {
-        id: getLastId();
+        id: getLastId(),
         name: '',
         description: '',
         image: '',
