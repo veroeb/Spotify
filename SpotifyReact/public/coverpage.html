@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../css/normalize.css"><!--Normalize tags -->
+        <link rel="stylesheet" href="../css/general.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Load React. -->
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <title>Musify - Browse</title>
+    </head>
+    <body>
+        <div id="root">
+        </div>
+
+        <div id="site_container"><!-- Whole site, grid manipulation -->
+            <div id="main_container"><!-- Grid manipulation. Navigation, header, section, aside-->
+                <div class="cover"><!-- Flex manipulation. Navigation & songCover -->
+                    <nav id="navigation">
+                        <h3>Browse</h3>
+                        <ul id="library">
+                            <li><h4>YOUR LIBRARY</h4></li>
+                            <li><a href="#">Your Daily Mix</a></li>
+                            <li><a href="#">Recently Played</a></li>
+                            <li><a href="#">Songs</a></li>
+                            <li><a href="#">Albums</a></li>
+                            <li><a href="#">Artists</a></li>
+                            <li><a href="#">Stations</a></li>
+                            <li><a href="#">Local Files</a></li>
+                            <li><a href="#">Podcasts</a></li>
+                            <li><h4>PLAYLISTS</h4></li>
+                            <span id="nav_playlist"></span>
+                        </ul>
+                    </nav>
+                    <div class="songCover"><!-- Display song cover image -->
+                        <div>
+                            <button id="myBtn">
+                                <i class="material-icons">add_circle_outline</i>
+                                <p>New Playlist</p>
+                            </button>
+                        </div>
+                        <div>
+                            <img src="../media/fallout.jpg" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="containerCenter"><!-- Center box -->
+                    <header id="header">
+                        <div>
+                            <i class="material-icons">keyboard_arrow_left</i>
+                            <i class="material-icons">keyboard_arrow_right</i>
+                        </div>
+                        <input id="searchTerms" type="text" placeholder="Song, artist, album" />
+                        <button onclick="makeSearch();">Search</button>
+                    </header>
+
+                    <section id="section"><!-- Main section -->
+                        <div id="genreContent"><!-- Grid manipulation -->
+                        </div>
+                    </section>
+                </div>
+                <aside id="sidebar">
+                    <h4>Friend Activity</h4>
+                    <ul id="friendActivity">
+                    </ul>
+                </aside>
+            </div>
+            <footer id="footer">
+                <div class="foot_content">
+                    <div>
+                        <h3 class="songTitle">Fourth of July</h3>
+                        <p class="songArtist">Fall Out Boy</p>
+                    </div>
+                    <audio id="audioControls" controls>
+                        <source src="" type="audio/mpeg" />
+                        Your browser does not support the <code>audio</code> element.
+                    </audio>
+                </div>
+            </footer>
+        </div>
+        <script type="text/babel" src="../javascript/react.js" crossorigin></script>
+        <script src="../javascript/load_data.js"></script>
+    </body>
+</html>

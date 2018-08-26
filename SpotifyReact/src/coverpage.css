@@ -1,0 +1,24 @@
+#genreContent {
+    display: grid;
+    grid-gap: 0.625rem;
+    grid-template-columns: auto auto auto auto;
+    /* background-color: #2196F3; */
+    padding: 0.625rem 1.875rem;
+}
+.genreItem {
+    background-color: rgba(255, 255, 255, 0.6);
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    padding: 0.625rem;
+    font-size: 1.2rem;
+    text-align: center;
+    /* align-items: center; */
+    /* display: inline-block; */
+}
+.genreItem > p{
+    opacity: 0.8;
+}
+
+.genreItem > img{
+    object-fit: cover;
+    width: 5rem;
+}
