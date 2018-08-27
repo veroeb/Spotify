@@ -123,9 +123,9 @@ function nextSong(preveNext) {
             audio.play();
         }
 }
-// fetchGetPlaylists();
-// fetchGetGenres();
-// fetchGetFriends();
+fetchGetPlaylists();
+fetchGetGenres();
+fetchGetFriends();
 
 //let songsIndexed = fetchGetSongsIndex('reload').then((response) => {return response});
     // songsIndexed = Promise.resolve(songsIndexed);
