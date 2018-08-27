@@ -113,31 +113,6 @@ function displayPlaylist(playlist) {
         </li>
     );
 }
-class BrowseGenre extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { genres : [], };
-    }
-    componentDidMount() {
-        fetch(urlHandler.urlPlaylists)
-        .then((response) => response.json())
-        .then((genresFound) => {
-            let genres = genresFound.map(displayGenre);
-            this.setState({genres: genres});
-        })
-        .catch(function(error) {
-            console.log("Error happened during fetchGetGenres()");
-            console.log(error);
-        });
-    }
-    render() {
-        return (
-            <div id="genreContent">
-                {this.state.genres}
-            </div>
-        );
-    }
-}
 // Displays genre in view
 function displayGenre(genre) {
     return (
@@ -177,6 +152,31 @@ function MainSection() {
             </section>
         </div>
     )
+}
+class BrowseGenre extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { genres : [], };
+    }
+    componentDidMount() {
+        fetch(urlHandler.urlPlaylists)
+        .then((response) => response.json())
+        .then((genresFound) => {
+            let genres = genresFound.map(displayGenre);
+            this.setState({genres: genres});
+        })
+        .catch(function(error) {
+            console.log("Error happened during fetchGetGenres()");
+            console.log(error);
+        });
+    }
+    render() {
+        return (
+            <div id="genreContent">
+                {this.state.genres}
+            </div>
+        );
+    }
 }
 function SideBar() {
     return (
