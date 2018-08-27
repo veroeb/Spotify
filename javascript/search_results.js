@@ -1,24 +1,30 @@
-function makeSearch() {
+const makeSearch = () => {
 	var search = document.getElementById("searchTerms").value;
 	search = search.toLowerCase();
 	resetSearchSection();
 	searchArtists(search);
 	searchAlbums(search);
 }
-
-function searchArtists(searchTerm){
+const displayMessage = () => {
+	console.log("Not found");
+}
+// Fetch GET artists by name
+const searchArtists = (searchTerm) => {
 	fetch(urlHandler.urlArtists+`?name=${searchTerm}`)
 	.then((response) => response.json())
-	.then(function(artistsFound) {
-		console.log("searchArtists: "+artistsFound );//Doesnt show as array?
-		artistsFound.map(loadArtist);
+	.then((artistsFound) => {
+		if(artistsFound.length > 0) {
+			artistsFound.map(loadArtist);
+		} else {
+			displayMessage();
+		}
 	})
 	.catch(function(error) {
 		console.log(`Error during searchArtists(${searchTerm})`);
 		console.log(error);
 	})
 }
-function loadArtist(artist) {
+const loadArtist = (artist) => {
     var artistBox = document.getElementById('artistsContent');
     var content = '<h2>ARTISTS</h2><br><div>\
             <img src="../media/razorsedge"/>\
@@ -28,8 +34,8 @@ function loadArtist(artist) {
         </div>';
     artistBox.innerHTML = content;
 }
-
-function searchAlbums(searchTerm){
+// Fetch GET albums by name
+const searchAlbums = (searchTerm) => {
 	fetch(urlHandler.urlAlbums+`?name=${searchTerm}`)
 	.then((response) => response.json())
 	.then(function(albumsFound) {
@@ -40,22 +46,18 @@ function searchAlbums(searchTerm){
 		console.log(error);
 	})
 }
-function loadAlbum(album) {
+const loadAlbum = (album) => {//Does not display artist properly.
     var albumBox = document.getElementById('albumsContent');
     var content = '<div>\
             <img src="../media/razorsedge"/>\
             <div>\
                 <h3>'+nameCapitalized(album.name)+'</h3>\
-				<p>'+album.songs+'</p>\
+				<p>'+album.artists+'</p>\
             </div>\
         </div>';
     albumBox.innerHTML = content;
 }
+// Fetch GET artist by id
+const getAlbumArtist = (artistId) => {
 
-function getAlbumArtist(artistId) {
-    for(index = 0; index < artists.length; index++) {
-        if(artists[index].id === artistId) {
-            return artists[index];
-        }
-    }
 }

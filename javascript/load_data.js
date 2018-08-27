@@ -1,5 +1,5 @@
 // GET PLAYLISTS from API and displays them in view
-function fetchGetPlaylists() {
+const fetchGetPlaylists = () => {
     fetch(urlHandler.urlPlaylists)
     .then((response) => response.json())
     .then(function(playlistsFound) {
@@ -11,7 +11,7 @@ function fetchGetPlaylists() {
     });
 }
 // Display playlist in view
-function displayPlaylist(playlist) {
+const displayPlaylist = (playlist) => {
     var playlistElement = document.getElementById('nav_playlist')
     let li = createNode('li'),
     anchor = createNode('a');
@@ -23,7 +23,7 @@ function displayPlaylist(playlist) {
 }
 
 // GET GENRES from API and displays them in view
-function fetchGetGenres() {
+const fetchGetGenres = () => {
     fetch(urlHandler.urlPlaylists)
     .then((response) => response.json())
     .then(function(genresFound) {
@@ -35,7 +35,7 @@ function fetchGetGenres() {
     });
 }
 // Displays genre in view
-function displayGenre(genre) {
+const displayGenre = (genre) => {
     var genreContent = document.getElementById('genreContent');
     let div = createNode('div'),
         img = createNode('img'),
@@ -49,7 +49,7 @@ function displayGenre(genre) {
 }
 
 // GET FRIENDS from API and displays them in view
-function fetchGetFriends() {
+const fetchGetFriends = () => {
     fetch(urlHandler.urlFriends)
     .then((response) => response.json())
     .then(function(friendsFound) {
@@ -61,7 +61,7 @@ function fetchGetFriends() {
     });
 }
 // Displays friend feed in view
-function displayFriendFeed(frund) {
+const displayFriendFeed = (frund) => {
     var friendFeed = document.getElementById('friendActivity');
     let li = createNode('li'),
         friendName = createNode('p'),
@@ -76,35 +76,27 @@ function displayFriendFeed(frund) {
     append(friendFeed, li);
 }
 
-function fetchGetSongsIndex() {
-    fetch(urlHandler.urlAlbums)
+// Returns array of songs id.
+const fetchGetSongsIndex = (albumName) => {
+    const urlSearchedAlbum = urlHandler.urlAlbums+`?name=${albumName}`;
+    return fetch(urlSearchedAlbum)
     .then((response) => response.json())
-    .then(function(data) {
-        let albumFound = data;
-        let albumSongs = albumFound[0].songs;
-        var songsList = [];
-        return songsList;
-        // var songObj;
-        // for(const item of albumSongs) {
-        //     songObj = await getSong(item);
-        //     console.log("geu: "+songObj);
-        //     songsList.push(songObj);
-        // }
-        // Promise.all(songsList).then(results=>{
-        //     console.log("HERE : "+ results);
-        // });
+    .then((albumFound) => {
+        if(albumFound[0].songs.length > 0) {
+            return albumFound[0].songs;
+        }
     })
     .catch(function(error) {
         console.log("Error happened during loadSongs()");
         console.log(error);
     })
 }
-function fetchGetSong(songId) {
+const fetchGetSong = async (songId) => {
     const urlSearchedSong = urlHandler.urlSongs+`?id=${songId}`;
-    fetch(urlSearchedSong)
+    return await fetch(urlSearchedSong)
     .then((response) => response.json())
-    .then(function(song) {
-        console.log(song);
+    .then((song) => {
+        // Improve: check whether song's null or not.
         return song;
     })
     .catch(function(error) {
@@ -113,24 +105,32 @@ function fetchGetSong(songId) {
     })
 }
 
-var songsIndexed = [2,8,9,4];
-var songPlaying = 0; //Index of songsIndexed
-const audio = document.getElementById("audioControls");
-audio.addEventListener('ended', nextSong);
-
 //prevNext is either 1 or -1. Go back or foward in list.
-function nextSong(prevNext=1) {
-    if(songsIndexed.length === songPlaying) songPlaying = 0;
-    else songPlaying = songPlaying + prevNext;
-    var song = fetchGetSong(songPlaying);
-    if(song != null) {
-        audio.src = song.src;
-        audio.pause();
-        audio.load();
-        audio.play();
+const nextSong = (prevNext=1) => {
+    songPlaying = songPlaying + prevNext;
+    if(songPlaying < 0) {
+        songPlaying = songsIndexed.length;
     }
+    else if(songPlaying > songsIndexed.length) {
+        songPlaying = 0;
+    }
+    let song = fetchGetSong(songsIndexed[songPlaying]).then(searched => {
+        if(searched != null) {
+            audio.src = searched.src;
+            audio.pause();
+            audio.load();
+            audio.play();
+        }
+    });
+
 }
 fetchGetPlaylists();
 fetchGetGenres();
 fetchGetFriends();
-// console.log('bye');
+
+let songsIndexed = fetchGetSongsIndex('reload').then((response) => {return response});
+// songsIndexed = Promise.resolve(songsIndexed);
+let songPlaying = 0; //Index of songsIndexed
+const audio = document.getElementById("audioControls");
+audio.addEventListener('ended', nextSong);
+// nextSong(1);
