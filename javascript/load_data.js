@@ -106,31 +106,35 @@ const fetchGetSong = async (songId) => {
 }
 
 //prevNext is either 1 or -1. Go back or foward in list.
-const nextSong = (prevNext=1) => {
-    songPlaying = songPlaying + prevNext;
+function nextSong(preveNext) {
+    songPlaying = songPlaying + preveNext;
     if(songPlaying < 0) {
         songPlaying = songsIndexed.length;
     }
     else if(songPlaying > songsIndexed.length) {
         songPlaying = 0;
     }
-    let song = fetchGetSong(songsIndexed[songPlaying]).then(searched => {
+    // let song = fetchGetSong(songsIndexed[songPlaying]).then(searched => { }
+    let searched = songsIndexed[songPlaying];
         if(searched != null) {
             audio.src = searched.src;
             audio.pause();
             audio.load();
             audio.play();
         }
-    });
-
 }
-fetchGetPlaylists();
-fetchGetGenres();
-fetchGetFriends();
+// fetchGetPlaylists();
+// fetchGetGenres();
+// fetchGetFriends();
 
-let songsIndexed = fetchGetSongsIndex('reload').then((response) => {return response});
-// songsIndexed = Promise.resolve(songsIndexed);
-let songPlaying = 0; //Index of songsIndexed
+//let songsIndexed = fetchGetSongsIndex('reload').then((response) => {return response});
+    // songsIndexed = Promise.resolve(songsIndexed);
+let songsIndexed=  [
+	{ "id": 1, "artists": [1], "genreId": 1, "name": "fuel", "src": "../media/songs/fuel.mp3"},
+	{ "id": 2, "artists": [1], "genreId": 1, "name": "the Memory Remains", "src": "../media/songs/the_memory_remains.mp3"},
+	{ "id": 3, "artists": [1], "genreId": 1, "name": "devil's Dance", "src": "../media/songs/devils_dance.mp3"}
+]
+let songPlaying = -1; //Index of songsIndexed
 const audio = document.getElementById("audioControls");
-audio.addEventListener('ended', nextSong);
-// nextSong(1);
+audio.addEventListener('ended', function(){nextSong(1)});
+nextSong(1);
