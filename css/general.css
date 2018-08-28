@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel="stylesheet");
+
 albumsContent* {
     font-family: 'Roboto', sans-serif;
 }
@@ -191,6 +193,6 @@ a {
 .foot_content > audio {
     flex: 3;
 }
-.songArtist{
+#songArtist{
     color: #b9b8b8;
 }

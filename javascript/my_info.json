@@ -23,13 +23,13 @@
 	{ "id": 10, "artists": [2], "genreId": 2, "name": "factory Of Faith", "src": ""}
 ],
 "genres": [
-    { "id": 1, "name": "rock"},
-    { "id":2, "name": "indie"},
-    { "id":3, "name": "latin"},
-    { "id":4, "name": "hip-hop"},
-    { "id":5, "name": "pop"},
-    { "id":6, "name": "folk & Americana"},
-    { "id":7, "name": "jazz"}
+    { "id": 1, "name": "rock", "src": "./media/musicthum.svg"},
+    { "id":2, "name": "indie", "src": "./media/musicthum.svg"},
+    { "id":3, "name": "latin", "src": "./media/musicthum.svg"},
+    { "id":4, "name": "hip-hop", "src": "./media/musicthum.svg"},
+    { "id":5, "name": "pop", "src": "./media/musicthum.svg"},
+    { "id":6, "name": "folk & Americana", "src": "./media/musicthum.svg"},
+    { "id":7, "name": "jazz", "src": "./media/musicthum.svg"}
 ],
 "playlists": [
     { "id": 1, "name": "shazam", "description": "Music from Shazam",
