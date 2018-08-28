@@ -117,7 +117,7 @@ function displayPlaylist(playlist) {
 function displayGenre(genre) {
     return (
         <div key={genre.name} className="genreItem">
-            <img src="../src/media/musicthum.svg" alt="Can not load image"/>
+            <img src={require("./media/musicthum.svg")} alt="Can not load image"/>
             <p>{nameCapitalized(genre.name)}</p>
         </div>
     );
@@ -178,29 +178,102 @@ class BrowseGenre extends Component {
         );
     }
 }
-function SideBar() {
+class SideBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { feeds : [], };
+    }
+    componentDidMount() {
+        fetch(urlHandler.urlFriends)
+        .then((response) => response.json())
+        .then((feedsFound) => {
+            let feeds = feedsFound.map(displayFriendFeed)
+            this.setState({feeds: feeds});
+        })
+    }
+    render() {
+        return (
+            <aside id="sidebar">
+                <h4>Friend Activity</h4>
+                <ul id="friendActivity"></ul>
+                {this.state.feeds}
+            </aside>
+        )
+    };
+}
+// Displays friend feed in view
+const displayFriendFeed = (frund) => {
     return (
-    <aside id="sidebar">
-        <h4>Friend Activity</h4>
-        <ul id="friendActivity"></ul>
-    </aside>
-    );
+        <div key={frund.name}>
+            <li>
+                <p>{frund.name}</p>
+                <p>{frund.song}</p>
+                <p>{frund.artist}</p>
+            </li>
+        </div>
+    )
 }
 function Footer() {
     return (
         <footer id="footer">
-            <div className="foot_content">
-                <div>
-                    <h3 className="songTitle">Fourth of July</h3>
-                    <p className="songArtist">Fall Out Boy</p>
-                </div>
-                <audio id="audioControls" controls>
-                    <source src="" type="audio/mpeg" />
-                    Your browser does not support the <code>audio</code> element.
-                </audio>
-            </div>
+            <AudioPlayer />
         </footer>
     );
+}
+class AudioPlayer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            songPlaying: 0,
+            songTitle: '',
+            songArtist:'',
+            src: ''
+        };
+    }
+    //prevNext is either 1 or -1. Go back or foward in list.
+    nextSong(prevNext) {
+        const audio = document.getElementById('audioControls')
+        let songsIndexed=  [
+        	{ "id": 1, "artists": "Metallica", "genreId": 1, "name": "fuel", "src": "../../media/songs/fuel.mp3"},
+        	{ "id": 2, "artists": "Metallica", "genreId": 1, "name": "the Memory Remains", "src":  "../../media/songs/the_memory_remains.mp3"},
+        	{ "id": 3, "artists": "Metallica", "genreId": 1, "name": "devil's Dance", "src":  "../../media/songs/devils_dance.mp3"}
+        ]
+        this.setState({songPlaying: this.state.songPlaying + prevNext});
+        if(this.state.songPlaying < 0) {
+            this.setState({songPlaying: songsIndexed.length});
+        }
+        else if(this.statesongPlaying > songsIndexed.length) {
+            this.setState({songPlaying: 0});
+        }
+        // let song = fetchGetSong(songsIndexed[songPlaying]).then(searched => { }
+        let searched = songsIndexed[this.state.songPlaying];
+            if(searched != null) {
+                this.setState({src: searched.src});
+                this.setState({songTitle: nameCapitalized(searched.name)});
+                this.setState({songArtist: nameCapitalized(searched.artists)});
+                audio.pause();
+                audio.load();
+                audio.play();
+            }
+    }
+    render() {
+        return (
+            <div className="foot_content">
+                <div>
+                    <h3 id="songTitle">{this.state.songTitle}</h3>
+                    <p id="songArtist">{this.state.songArtist}</p>
+                </div>
+                <audio id="audioControls" onEnded={(e) => this.nextSong(1)} controls>
+                    <source src={this.state.src} type="audio/mpeg" />
+                    Your browser does not support the <code>audio</code> element.
+                </audio>
+                <div>
+                    <button type="button" name="btnNext" onClick={(e) => this.nextSong(1)}>Next</button>
+                    <button type="button" name="btnPrevious" onClick={(e) => this.nextSong(-1)}>Previous</button>
+                </div>
+            </div>
+        );
+    }
 }
 ReactDOM.render(
     <SiteContainer />,
