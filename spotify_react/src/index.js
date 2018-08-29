@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import './index.css';
 
 const URL = 'http://localhost:3000/';
@@ -19,10 +20,12 @@ function nameCapitalized(name) {
 
 function SiteContainer() {
     return (
-    <div id="site_container">
-        <MainContainer />
-        <Footer />
-    </div>
+    <Router>
+        <div id="site_container">
+            <MainContainer />
+            <Footer />
+        </div>
+    </Router>
     );
 
 }
@@ -61,7 +64,9 @@ function SongCover() {
 function Navigation() {
     return (
     <nav id="navigation">
+        <Link to={`/browse`}>
         <h3>Browse</h3>
+        </Link>
         <ul id="library">
             <li><h4>YOUR LIBRARY</h4></li>
             <li><a href="#">Your Daily Mix</a></li>
@@ -148,7 +153,7 @@ function MainSection() {
     return (
         <div>
             <section id="section">
-                <BrowseGenre />
+                <Route path='/browse' component={BrowseGenre}/>
             </section>
         </div>
     )
@@ -235,8 +240,8 @@ class AudioPlayer extends Component {
         const audio = document.getElementById('audioControls')
         let songsIndexed=  [
         	{ "id": 1, "artists": "Metallica", "genreId": 1, "name": "fuel", "src": "../../media/songs/fuel.mp3"},
-        	{ "id": 2, "artists": "Metallica", "genreId": 1, "name": "the Memory Remains", "src":  "../../media/songs/the_memory_remains.mp3"},
-        	{ "id": 3, "artists": "Metallica", "genreId": 1, "name": "devil's Dance", "src":  "../../media/songs/devils_dance.mp3"}
+        	{ "id": 2, "artists": "Metallica", "genreId": 1, "name": "the Memory Remains", "src": "../../media/songs/the_memory_remains.mp3"},
+        	{ "id": 3, "artists": "Metallica", "genreId": 1, "name": "devil's Dance", "src": "../../media/songs/devils_dance.mp3"}
         ]
         this.setState({songPlaying: this.state.songPlaying + prevNext});
         if(this.state.songPlaying < 0) {
@@ -264,7 +269,7 @@ class AudioPlayer extends Component {
                     <p id="songArtist">{this.state.songArtist}</p>
                 </div>
                 <audio id="audioControls" onEnded={(e) => this.nextSong(1)} controls>
-                    <source src={this.state.src} type="audio/mpeg" />
+                    <source src={this.state.src} type="audio/mp3" />
                     Your browser does not support the <code>audio</code> element.
                 </audio>
                 <div>
