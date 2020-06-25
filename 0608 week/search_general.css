@@ -1,0 +1,169 @@
+html {
+    background-color: #282828;
+    color: #ffffff;
+}
+
+#songsContent {
+    display: flex;
+}
+#songsContent > * {
+    flex: 1;
+    white-space: nowrap;
+}
+#songsContent ul{
+    list-style: none;
+}
+
+#artistsContent a *{
+    white-space: 
+}
+#container{
+    display: flex;
+    flex-flow: row wrap;/* direction - wrap/nowrap */
+    font-weight: bold;
+    text-align: center;
+}
+#container > * {
+    flex: 1 100%;
+}
+#header {
+    background-color: #129e9e;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#section {
+    order: 2;
+    flex: 5 1 auto;
+}
+#navigation {
+    background-color: #3b3b3b;
+    order: 1;
+    flex: 1 1 auto;
+}
+#sidebar {
+    background-color: #3b3b3b;
+    order: 3;
+    flex: 1 0 auto;
+}
+#footer {
+    background-color: #3b3b3b;
+    order: 4;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#header input {
+    float: right;
+    margin: 0.9rem 0.55rem 0px 0px;
+    border-radius: 0.375rem;
+    border-style: none;
+}
+#header h1 {
+    text-align: left;
+    margin-left: 1.22rem;
+    font-size: 2.5rem;
+    padding-top: 0.2rem;
+}
+
+#navigation h1, #sidebar h1{
+    color: #80b4b4;
+    font-size: 1.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+#navigation a{/*.library a {} ? */
+    color: rgb(180, 180, 180);
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+#navigation a:hover{
+    color: rgb(189, 243, 243);
+}
+
+#sidebar h1 {
+    text-align: left;
+}
+#sidebar ul{
+    list-style: none;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 0.8rem;
+    text-align: left;
+}
+#sidebar li{
+    margin-top: 1rem;
+}
+
+#friendName{
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding-bottom: 0.2rem;
+    padding-top: 0.5rem;
+}
+
+#friendSong, #friendArtist{
+    font-weight: lighter;
+    color: rgb(180, 180, 180);
+    padding-top: 0.1rem;
+}
+
+#footer audio {
+    width: 75%;
+    float: center;
+    margin-left: 0;
+    margin-right: 3.125rem;
+    margin-top: 0.9375rem;
+}
+
+.library{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+}
+.library li a {
+    display: block;
+}
+.library li label {
+    font-weight: bold;
+    display: block;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+/* REV */
+.coverPhoto{
+    float: left;
+    list-style: none;
+}
+.coverPhoto #songTitle{
+    font-weight: bold;
+    margin-top: 0.625rem;
+    margin: 0.3125rem;
+    text-align: center;
+    float: center;
+}
+.coverPhoto #songArtist{
+    font-size: 0.875rem;
+    color: #b9b8b8;
+    text-align: center;
+    font-weight: 6.25rem;
+    float: center;
+}
+#songCover{
+    height: 9.375rem;
+    float: left;
+}
+#textFooter{
+    margin: 1.875rem 0rem 0.625rem 23rem;
+    overflow: auto;
+    float: center;
+    text-align: center;
+}
+footer ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/* END REV */
